@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Haoxuan Zheng — Personal</title>
+		<link rel="stylesheet" href="/styles.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container">
+				<h1 class="brand">Haoxuan Zheng</h1>
+				<div class="controls">
+					<button id="surprise-btn" aria-label="Surprise me">🎉 Surprise me</button>
+					<button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+				</div>
+			</div>
+		</header>
+
+		<main class="container">
+			<section class="hero">
+				<div class="avatar" aria-hidden="true">HZ</div>
+				<div class="hero-text">
+					<h2 class="typing">Hi — I'm <span id="typed-name">Haoxuan</span>.</h2>
+					<p id="hero-sub">Developer, writer, and curious tinkerer. Welcome to my personal site.</p>
+				</div>
+			</section>
+
+			<section id="about">
+				<h3>About</h3>
+				<p>Short bio goes here. Add your interests, location, and what you build.</p>
+			</section>
+
+			<section id="projects">
+				<h3>Projects</h3>
+				<ul>
+					<li><strong>Project One</strong> — brief description.</li>
+					<li><strong>Project Two</strong> — brief description.</li>
+				</ul>
+			</section>
+
+			<section id="blog">
+				<h3>Blog</h3>
+				<div id="posts">Loading posts…</div>
+			</section>
+
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">© <span id="year"></span> Haoxuan Zheng</div>
+		</footer>
+		<div id="toast" role="status" aria-live="polite" hidden></div>
+		<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+		<script src="/script.js"></script>
+	</body>
+</html>

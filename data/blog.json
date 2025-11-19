@@ -1,0 +1,18 @@
+[
+	{
+		"title": "Welcome — first post",
+		"date": "2025-11-18",
+		"address": "NYC",
+		"author": "Haoxuan Zheng",
+		"excerpt": "This is the first sample post for the personal site. Edit `data/blog.json` to add real posts.",
+		"url": "#"
+	},
+	{
+		"title": "Notes on a small project",
+		"date": "2025-10-01",
+		"address": "NYC",
+		"author": "Haoxuan Zheng",
+		"excerpt": "A short summary of a side project with links and next steps.",
+		"url": "#"
+	}
+]

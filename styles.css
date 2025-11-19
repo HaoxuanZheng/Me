@@ -1,0 +1,140 @@
+:root {
+    --cursor-size: 20px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #151414;
+    color: #e5e5e5;
+    overflow-x: hidden;
+    cursor: none;
+}
+h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom Cursor */
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border: 1px solid white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    mix-blend-mode: difference;
+}
+#cursor.hovered {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: transparent;
+}
+
+/* Utilities */
+.glass-panel {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-stroke {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    color: transparent;
+    transition: all 0.5s ease;
+}
+.group:hover .text-stroke {
+    -webkit-text-stroke: 0px;
+    color: white;
+}
+
+/* Canvas container */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.8; /* Increased opacity for better star visibility */
+}
+
+/* Magnetic Button Effect */
+.magnetic-btn {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Loading overlay */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+.loader-line {
+    width: 0%;
+    height: 1px;
+    background: white;
+    animation: load 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes load {
+    to { width: 200px; }
+}
+
+/* Sparkle Button Animation */
+@keyframes shine {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+.sparkle-btn {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 200% auto;
+    animation: shine 3s linear infinite;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+/* Chat & Vision Animations */
+.cursor-blink { animation: blink 1s step-end infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.chat-message { animation: fadeIn 0.3s ease forwards; opacity: 0; transform: translateY(5px); }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+.chat-message.user { text-align: right; color: #a0a0a0; }
+.chat-message.ai { text-align: left; color: #ffffff; border-left: 2px solid #fff; padding-left: 1rem; }
+
+/* Dropzone Styles */
+.drop-zone {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='0' ry='0' stroke='%23333' stroke-width='2' stroke-dasharray='10%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
+}
+.drop-zone.dragover { background-color: rgba(255, 255, 255, 0.05); border-color: white; }
